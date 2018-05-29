@@ -1,7 +1,7 @@
 
-
-path <- "C:/Users/vpulij001c/Desktop/vj/R/ReadLineByLine/SaiArka_Whatapp_chat.txt"
-print(path)
+library(RCurl)
+pathurl <- ("https://github.com/VijayPulijala/ScanThruTextUsingR/blob/master/NarendraModi_as_PM_1stSpeech.csv")
+path <- read.csv(text = pathurl)
 
 conn <- file(path,open="r")
 lines <- readLines(conn)
@@ -10,7 +10,7 @@ for (i in 1:length(lines)){
 }
 close(conn)
 
-sentences<-scan("C:/Users/vpulij001c/Desktop/vj/R/ReadLineByLine/SaiArka_Whatapp_chat.txt"
+sentences<-scan("C:/Users/vpulij001c/Desktop/vj/RReadLineByLine/NarendraModi_as_PM_1stSpeech.txt"
                 ,"character",sep="\n");
 sentences<-gsub("\\.","",sentences)
 sentences<-gsub("\\,","",sentences)
